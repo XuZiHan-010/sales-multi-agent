@@ -1,0 +1,164 @@
+[
+  {
+    "factory": "天津厂",
+    "sku": "SKU-A",
+    "max_capacity_monthly": 60000,
+    "current_utilization": 0.681,
+    "available_capacity": 19164,
+    "switch_cost_per_batch": 5106,
+    "equipment_ok": true
+  },
+  {
+    "factory": "天津厂",
+    "sku": "SKU-B",
+    "max_capacity_monthly": 40000,
+    "current_utilization": 0.749,
+    "available_capacity": 10037,
+    "switch_cost_per_batch": 8960,
+    "equipment_ok": true
+  },
+  {
+    "factory": "天津厂",
+    "sku": "SKU-C",
+    "max_capacity_monthly": 25000,
+    "current_utilization": 0.647,
+    "available_capacity": 8825,
+    "switch_cost_per_batch": 5606,
+    "equipment_ok": true
+  },
+  {
+    "factory": "天津厂",
+    "sku": "SKU-D",
+    "max_capacity_monthly": 45000,
+    "current_utilization": 0.691,
+    "available_capacity": 13900,
+    "switch_cost_per_batch": 18184,
+    "equipment_ok": true
+  },
+  {
+    "factory": "天津厂",
+    "sku": "SKU-E",
+    "max_capacity_monthly": 20000,
+    "current_utilization": 0.684,
+    "available_capacity": 6316,
+    "switch_cost_per_batch": 15186,
+    "equipment_ok": true
+  },
+  {
+    "factory": "天津厂",
+    "sku": "SKU-F",
+    "max_capacity_monthly": 35000,
+    "current_utilization": 0.789,
+    "available_capacity": 7380,
+    "switch_cost_per_batch": 9921,
+    "equipment_ok": true
+  },
+  {
+    "factory": "上海厂",
+    "sku": "SKU-A",
+    "max_capacity_monthly": 80000,
+    "current_utilization": 0.805,
+    "available_capacity": 15567,
+    "switch_cost_per_batch": 15378,
+    "equipment_ok": true
+  },
+  {
+    "factory": "上海厂",
+    "sku": "SKU-B",
+    "max_capacity_monthly": 55000,
+    "current_utilization": 0.74,
+    "available_capacity": 14310,
+    "switch_cost_per_batch": 5014,
+    "equipment_ok": true
+  },
+  {
+    "factory": "上海厂",
+    "sku": "SKU-C",
+    "max_capacity_monthly": 35000,
+    "current_utilization": 0.609,
+    "available_capacity": 13692,
+    "switch_cost_per_batch": 19862,
+    "equipment_ok": true
+  },
+  {
+    "factory": "上海厂",
+    "sku": "SKU-D",
+    "max_capacity_monthly": 60000,
+    "current_utilization": 0.796,
+    "available_capacity": 12265,
+    "switch_cost_per_batch": 19063,
+    "equipment_ok": true
+  },
+  {
+    "factory": "上海厂",
+    "sku": "SKU-E",
+    "max_capacity_monthly": 28000,
+    "current_utilization": 0.826,
+    "available_capacity": 4883,
+    "switch_cost_per_batch": 5306,
+    "equipment_ok": true
+  },
+  {
+    "factory": "上海厂",
+    "sku": "SKU-F",
+    "max_capacity_monthly": 48000,
+    "current_utilization": 0.798,
+    "available_capacity": 9697,
+    "switch_cost_per_batch": 11767,
+    "equipment_ok": true
+  },
+  {
+    "factory": "广州厂",
+    "sku": "SKU-A",
+    "max_capacity_monthly": 70000,
+    "current_utilization": 0.797,
+    "available_capacity": 14182,
+    "switch_cost_per_batch": 5100,
+    "equipment_ok": true
+  },
+  {
+    "factory": "广州厂",
+    "sku": "SKU-B",
+    "max_capacity_monthly": 48000,
+    "current_utilization": 0.672,
+    "available_capacity": 15741,
+    "switch_cost_per_batch": 16269,
+    "equipment_ok": true
+  },
+  {
+    "factory": "广州厂",
+    "sku": "SKU-C",
+    "max_capacity_monthly": 30000,
+    "current_utilization": 0.798,
+    "available_capacity": 6052,
+    "switch_cost_per_batch": 14295,
+    "equipment_ok": true
+  },
+  {
+    "factory": "广州厂",
+    "sku": "SKU-D",
+    "max_capacity_monthly": 52000,
+    "current_utilization": 0.675,
+    "available_capacity": 16883,
+    "switch_cost_per_batch": 9655,
+    "equipment_ok": true
+  },
+  {
+    "factory": "广州厂",
+    "sku": "SKU-E",
+    "max_capacity_monthly": 24000,
+    "current_utilization": 0.842,
+    "available_capacity": 3799,
+    "switch_cost_per_batch": 11588,
+    "equipment_ok": true
+  },
+  {
+    "factory": "广州厂",
+    "sku": "SKU-F",
+    "max_capacity_monthly": 42000,
+    "current_utilization": 0.712,
+    "available_capacity": 12105,
+    "switch_cost_per_batch": 13284,
+    "equipment_ok": true
+  }
+]

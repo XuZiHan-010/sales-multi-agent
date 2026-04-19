@@ -1,0 +1,482 @@
+[
+  {
+    "warehouse": "华北-仓1",
+    "region": "华北",
+    "sku": "SKU-A",
+    "current_stock": 5628,
+    "safety_stock": 2400,
+    "in_transit": 136
+  },
+  {
+    "warehouse": "华北-仓1",
+    "region": "华北",
+    "sku": "SKU-B",
+    "current_stock": 5612,
+    "safety_stock": 1500,
+    "in_transit": 12
+  },
+  {
+    "warehouse": "华北-仓1",
+    "region": "华北",
+    "sku": "SKU-C",
+    "current_stock": 4104,
+    "safety_stock": 900,
+    "in_transit": 424
+  },
+  {
+    "warehouse": "华北-仓1",
+    "region": "华北",
+    "sku": "SKU-D",
+    "current_stock": 12616,
+    "safety_stock": 1800,
+    "in_transit": 725
+  },
+  {
+    "warehouse": "华北-仓1",
+    "region": "华北",
+    "sku": "SKU-E",
+    "current_stock": 5484,
+    "safety_stock": 750,
+    "in_transit": 203
+  },
+  {
+    "warehouse": "华北-仓1",
+    "region": "华北",
+    "sku": "SKU-F",
+    "current_stock": 8790,
+    "safety_stock": 1200,
+    "in_transit": 405
+  },
+  {
+    "warehouse": "华北-仓2",
+    "region": "华北",
+    "sku": "SKU-A",
+    "current_stock": 7568,
+    "safety_stock": 2400,
+    "in_transit": 1510
+  },
+  {
+    "warehouse": "华北-仓2",
+    "region": "华北",
+    "sku": "SKU-B",
+    "current_stock": 5249,
+    "safety_stock": 1500,
+    "in_transit": 26
+  },
+  {
+    "warehouse": "华北-仓2",
+    "region": "华北",
+    "sku": "SKU-C",
+    "current_stock": 2956,
+    "safety_stock": 900,
+    "in_transit": 220
+  },
+  {
+    "warehouse": "华北-仓2",
+    "region": "华北",
+    "sku": "SKU-D",
+    "current_stock": 7216,
+    "safety_stock": 1800,
+    "in_transit": 629
+  },
+  {
+    "warehouse": "华北-仓2",
+    "region": "华北",
+    "sku": "SKU-E",
+    "current_stock": 5665,
+    "safety_stock": 750,
+    "in_transit": 146
+  },
+  {
+    "warehouse": "华北-仓2",
+    "region": "华北",
+    "sku": "SKU-F",
+    "current_stock": 6166,
+    "safety_stock": 1200,
+    "in_transit": 272
+  },
+  {
+    "warehouse": "华北-仓3",
+    "region": "华北",
+    "sku": "SKU-A",
+    "current_stock": 17148,
+    "safety_stock": 2400,
+    "in_transit": 252
+  },
+  {
+    "warehouse": "华北-仓3",
+    "region": "华北",
+    "sku": "SKU-B",
+    "current_stock": 3535,
+    "safety_stock": 1500,
+    "in_transit": 502
+  },
+  {
+    "warehouse": "华北-仓3",
+    "region": "华北",
+    "sku": "SKU-C",
+    "current_stock": 5531,
+    "safety_stock": 900,
+    "in_transit": 477
+  },
+  {
+    "warehouse": "华北-仓3",
+    "region": "华北",
+    "sku": "SKU-D",
+    "current_stock": 10075,
+    "safety_stock": 1800,
+    "in_transit": 928
+  },
+  {
+    "warehouse": "华北-仓3",
+    "region": "华北",
+    "sku": "SKU-E",
+    "current_stock": 3213,
+    "safety_stock": 750,
+    "in_transit": 16
+  },
+  {
+    "warehouse": "华北-仓3",
+    "region": "华北",
+    "sku": "SKU-F",
+    "current_stock": 2928,
+    "safety_stock": 1200,
+    "in_transit": 30
+  },
+  {
+    "warehouse": "华东-仓1",
+    "region": "华东",
+    "sku": "SKU-A",
+    "current_stock": 13894,
+    "safety_stock": 3600,
+    "in_transit": 1189
+  },
+  {
+    "warehouse": "华东-仓1",
+    "region": "华东",
+    "sku": "SKU-B",
+    "current_stock": 8488,
+    "safety_stock": 2100,
+    "in_transit": 784
+  },
+  {
+    "warehouse": "华东-仓1",
+    "region": "华东",
+    "sku": "SKU-C",
+    "current_stock": 6575,
+    "safety_stock": 1350,
+    "in_transit": 610
+  },
+  {
+    "warehouse": "华东-仓1",
+    "region": "华东",
+    "sku": "SKU-D",
+    "current_stock": 16505,
+    "safety_stock": 2700,
+    "in_transit": 572
+  },
+  {
+    "warehouse": "华东-仓1",
+    "region": "华东",
+    "sku": "SKU-E",
+    "current_stock": 4173,
+    "safety_stock": 1050,
+    "in_transit": 409
+  },
+  {
+    "warehouse": "华东-仓1",
+    "region": "华东",
+    "sku": "SKU-F",
+    "current_stock": 9310,
+    "safety_stock": 1650,
+    "in_transit": 346
+  },
+  {
+    "warehouse": "华东-仓2",
+    "region": "华东",
+    "sku": "SKU-A",
+    "current_stock": 13927,
+    "safety_stock": 3600,
+    "in_transit": 1665
+  },
+  {
+    "warehouse": "华东-仓2",
+    "region": "华东",
+    "sku": "SKU-B",
+    "current_stock": 12563,
+    "safety_stock": 2100,
+    "in_transit": 189
+  },
+  {
+    "warehouse": "华东-仓2",
+    "region": "华东",
+    "sku": "SKU-C",
+    "current_stock": 6219,
+    "safety_stock": 1350,
+    "in_transit": 803
+  },
+  {
+    "warehouse": "华东-仓2",
+    "region": "华东",
+    "sku": "SKU-D",
+    "current_stock": 5153,
+    "safety_stock": 2700,
+    "in_transit": 1539
+  },
+  {
+    "warehouse": "华东-仓2",
+    "region": "华东",
+    "sku": "SKU-E",
+    "current_stock": 2892,
+    "safety_stock": 1050,
+    "in_transit": 355
+  },
+  {
+    "warehouse": "华东-仓2",
+    "region": "华东",
+    "sku": "SKU-F",
+    "current_stock": 7417,
+    "safety_stock": 1650,
+    "in_transit": 11
+  },
+  {
+    "warehouse": "华东-仓3",
+    "region": "华东",
+    "sku": "SKU-A",
+    "current_stock": 27969,
+    "safety_stock": 3600,
+    "in_transit": 1091
+  },
+  {
+    "warehouse": "华东-仓3",
+    "region": "华东",
+    "sku": "SKU-B",
+    "current_stock": 16859,
+    "safety_stock": 2100,
+    "in_transit": 401
+  },
+  {
+    "warehouse": "华东-仓3",
+    "region": "华东",
+    "sku": "SKU-C",
+    "current_stock": 10046,
+    "safety_stock": 1350,
+    "in_transit": 830
+  },
+  {
+    "warehouse": "华东-仓3",
+    "region": "华东",
+    "sku": "SKU-D",
+    "current_stock": 14522,
+    "safety_stock": 2700,
+    "in_transit": 364
+  },
+  {
+    "warehouse": "华东-仓3",
+    "region": "华东",
+    "sku": "SKU-E",
+    "current_stock": 6546,
+    "safety_stock": 1050,
+    "in_transit": 384
+  },
+  {
+    "warehouse": "华东-仓3",
+    "region": "华东",
+    "sku": "SKU-F",
+    "current_stock": 13139,
+    "safety_stock": 1650,
+    "in_transit": 483
+  },
+  {
+    "warehouse": "华南-仓1",
+    "region": "华南",
+    "sku": "SKU-A",
+    "current_stock": 10370,
+    "safety_stock": 3000,
+    "in_transit": 276
+  },
+  {
+    "warehouse": "华南-仓1",
+    "region": "华南",
+    "sku": "SKU-B",
+    "current_stock": 11383,
+    "safety_stock": 1800,
+    "in_transit": 1168
+  },
+  {
+    "warehouse": "华南-仓1",
+    "region": "华南",
+    "sku": "SKU-C",
+    "current_stock": 2226,
+    "safety_stock": 1200,
+    "in_transit": 592
+  },
+  {
+    "warehouse": "华南-仓1",
+    "region": "华南",
+    "sku": "SKU-D",
+    "current_stock": 17653,
+    "safety_stock": 2250,
+    "in_transit": 112
+  },
+  {
+    "warehouse": "华南-仓1",
+    "region": "华南",
+    "sku": "SKU-E",
+    "current_stock": 2161,
+    "safety_stock": 900,
+    "in_transit": 415
+  },
+  {
+    "warehouse": "华南-仓1",
+    "region": "华南",
+    "sku": "SKU-F",
+    "current_stock": 8979,
+    "safety_stock": 1500,
+    "in_transit": 68
+  },
+  {
+    "warehouse": "华南-仓2",
+    "region": "华南",
+    "sku": "SKU-A",
+    "current_stock": 21688,
+    "safety_stock": 3000,
+    "in_transit": 1046
+  },
+  {
+    "warehouse": "华南-仓2",
+    "region": "华南",
+    "sku": "SKU-B",
+    "current_stock": 13886,
+    "safety_stock": 1800,
+    "in_transit": 1053
+  },
+  {
+    "warehouse": "华南-仓2",
+    "region": "华南",
+    "sku": "SKU-C",
+    "current_stock": 8500,
+    "safety_stock": 1200,
+    "in_transit": 412
+  },
+  {
+    "warehouse": "华南-仓2",
+    "region": "华南",
+    "sku": "SKU-D",
+    "current_stock": 7525,
+    "safety_stock": 2250,
+    "in_transit": 758
+  },
+  {
+    "warehouse": "华南-仓2",
+    "region": "华南",
+    "sku": "SKU-E",
+    "current_stock": 2104,
+    "safety_stock": 900,
+    "in_transit": 395
+  },
+  {
+    "warehouse": "华南-仓2",
+    "region": "华南",
+    "sku": "SKU-F",
+    "current_stock": 3839,
+    "safety_stock": 1500,
+    "in_transit": 511
+  },
+  {
+    "warehouse": "华南-仓3",
+    "region": "华南",
+    "sku": "SKU-A",
+    "current_stock": 6087,
+    "safety_stock": 3000,
+    "in_transit": 599
+  },
+  {
+    "warehouse": "华南-仓3",
+    "region": "华南",
+    "sku": "SKU-B",
+    "current_stock": 5784,
+    "safety_stock": 1800,
+    "in_transit": 744
+  },
+  {
+    "warehouse": "华南-仓3",
+    "region": "华南",
+    "sku": "SKU-C",
+    "current_stock": 8294,
+    "safety_stock": 1200,
+    "in_transit": 45
+  },
+  {
+    "warehouse": "华南-仓3",
+    "region": "华南",
+    "sku": "SKU-D",
+    "current_stock": 16504,
+    "safety_stock": 2250,
+    "in_transit": 1291
+  },
+  {
+    "warehouse": "华南-仓3",
+    "region": "华南",
+    "sku": "SKU-E",
+    "current_stock": 3553,
+    "safety_stock": 900,
+    "in_transit": 395
+  },
+  {
+    "warehouse": "华南-仓3",
+    "region": "华南",
+    "sku": "SKU-F",
+    "current_stock": 6526,
+    "safety_stock": 1500,
+    "in_transit": 154
+  },
+  {
+    "warehouse": "中转-仓1",
+    "region": "中转",
+    "sku": "SKU-A",
+    "current_stock": 18687,
+    "safety_stock": 3600,
+    "in_transit": 207
+  },
+  {
+    "warehouse": "中转-仓1",
+    "region": "中转",
+    "sku": "SKU-B",
+    "current_stock": 15798,
+    "safety_stock": 2100,
+    "in_transit": 1294
+  },
+  {
+    "warehouse": "中转-仓1",
+    "region": "中转",
+    "sku": "SKU-C",
+    "current_stock": 9644,
+    "safety_stock": 1350,
+    "in_transit": 506
+  },
+  {
+    "warehouse": "中转-仓1",
+    "region": "中转",
+    "sku": "SKU-D",
+    "current_stock": 14536,
+    "safety_stock": 2700,
+    "in_transit": 1772
+  },
+  {
+    "warehouse": "中转-仓1",
+    "region": "中转",
+    "sku": "SKU-E",
+    "current_stock": 3485,
+    "safety_stock": 1050,
+    "in_transit": 53
+  },
+  {
+    "warehouse": "中转-仓1",
+    "region": "中转",
+    "sku": "SKU-F",
+    "current_stock": 8931,
+    "safety_stock": 1650,
+    "in_transit": 361
+  }
+]

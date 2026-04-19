@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f1117;
+  --foreground: #e2e8f0;
+  --card: #1a1d2e;
+  --card-foreground: #e2e8f0;
+  --border: #2d3748;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --muted: #2d3748;
+  --muted-foreground: #94a3b8;
+  --accent: #06b6d4;
+  --destructive: #ef4444;
+  --radius: 0.5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(26, 29, 46, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes edge-pulse {
+  0%, 100% { stroke-opacity: 0.3; }
+  50%       { stroke-opacity: 0.9; }
+}
+
+.animate-fade-in  { animation: fade-in  0.3s ease both; }
+.animate-slide-in { animation: slide-in 0.25s ease both; }
+.animate-slide-up { animation: slide-up 0.3s ease both; }
+.animate-edge-pulse { animation: edge-pulse 1.5s ease-in-out infinite; }
