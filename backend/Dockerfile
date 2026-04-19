@@ -7,10 +7,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc g++ libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY backend/ .
 
 # Pre-generate mock data at build time
 RUN python -c "from data.generate_mock_data import generate_all; generate_all()"
