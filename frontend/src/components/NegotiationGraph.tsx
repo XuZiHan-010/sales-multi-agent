@@ -397,54 +397,26 @@ function CompletionBanner({
 
   return (
     <div
-      className="shrink-0 animate-fade-in border-b border-indigo-500/25"
-      style={{
-        background: "linear-gradient(135deg, rgba(15,18,40,0.98) 0%, rgba(30,27,75,0.95) 100%)",
-      }}
+      className="shrink-0 animate-fade-in border-b border-indigo-500/25 px-4 py-2 flex items-center gap-4"
+      style={{ background: "linear-gradient(135deg, rgba(15,18,40,0.98) 0%, rgba(30,27,75,0.95) 100%)" }}
     >
-      {/* Top label row */}
-      <div className="px-4 pt-3 pb-1 flex items-center gap-2"
-        style={{ borderBottom: "1px solid rgba(79,70,229,0.15)" }}>
-        <span className="text-base">🏁</span>
-        <span className="text-sm font-bold text-indigo-200">协同完成</span>
-        <span className="text-[12px] text-slate-500">· 共 {eventCount} 步</span>
+      <span className="text-sm">🏁</span>
+      <span className="text-[12px] font-bold text-indigo-200">协同完成</span>
+      <span className="text-[11px] text-slate-500">共 {eventCount} 步</span>
+      <div className="flex items-center gap-4 ml-2">
+        <span className="text-[13px] font-bold text-emerald-300">{fillRate !== null ? `${fillRate}%` : "—"} <span className="text-[10px] text-slate-500 font-normal">满足率</span></span>
+        <span className="text-[13px] font-bold text-cyan-300">{awarded !== undefined ? `${awarded.toLocaleString()}箱` : "—"} <span className="text-[10px] text-slate-500 font-normal">协调量</span></span>
+        <span className="text-[13px] font-bold text-indigo-300">{cost !== undefined ? `¥${(cost / 1000).toFixed(0)}K` : "—"} <span className="text-[10px] text-slate-500 font-normal">成本</span></span>
       </div>
-
-      {/* Metrics row */}
-      <div className="grid grid-cols-3 divide-x divide-slate-700/40">
-        <div className="px-3 py-2.5 text-center">
-          <p className="text-xl font-bold text-emerald-300">{fillRate !== null ? `${fillRate}%` : "—"}</p>
-          <p className="text-[12px] text-slate-400 mt-0.5">需求满足率</p>
-        </div>
-        <div className="px-3 py-2.5 text-center">
-          <p className="text-xl font-bold text-cyan-300">
-            {awarded !== undefined ? `${awarded.toLocaleString()}箱` : "—"}
-          </p>
-          <p className="text-[12px] text-slate-400 mt-0.5">已协调数量</p>
-        </div>
-        <div className="px-3 py-2.5 text-center">
-          <p className="text-xl font-bold text-indigo-300">
-            {cost !== undefined ? `¥${(cost / 1000).toFixed(0)}K` : "—"}
-          </p>
-          <p className="text-[12px] text-slate-400 mt-0.5">协同成本</p>
-        </div>
-      </div>
-
-      {/* Summary message + scroll button */}
-      <div className="px-4 py-2 flex items-center gap-3 border-t border-slate-700/30">
-        {finalSummary.message && (
-          <p className="text-[12px] text-slate-400 leading-relaxed truncate flex-1">{finalSummary.message}</p>
-        )}
-        <button
-          onClick={() => {
-            const el = document.querySelector("[data-panel='results']")
-            el?.scrollIntoView({ behavior: "smooth", block: "start" })
-          }}
-          className="shrink-0 flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold text-indigo-300 border border-indigo-500/40 bg-indigo-900/30 hover:bg-indigo-800/40 hover:text-indigo-200 transition-colors whitespace-nowrap"
-        >
-          查看协同摘要 ↓
-        </button>
-      </div>
+      <button
+        onClick={() => {
+          const el = document.querySelector("[data-panel='results']")
+          el?.scrollIntoView({ behavior: "smooth", block: "start" })
+        }}
+        className="ml-auto shrink-0 flex items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-semibold text-indigo-300 border border-indigo-500/40 bg-indigo-900/30 hover:bg-indigo-800/40 transition-colors whitespace-nowrap"
+      >
+        查看摘要 ↓
+      </button>
     </div>
   )
 }

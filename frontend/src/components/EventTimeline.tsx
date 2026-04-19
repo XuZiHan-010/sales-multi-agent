@@ -51,9 +51,9 @@ export default function EventTimeline() {
   }, [events.length])
 
   return (
-    <div className="rounded-xl border border-indigo-500/20 bg-[#1a1d2e]/80 flex flex-col overflow-hidden">
-      <div className="px-3 py-3 border-b border-slate-700/50 flex items-center justify-between shrink-0">
-        <h2 className="text-base font-semibold text-slate-200">事件流</h2>
+    <div className="rounded-xl border border-indigo-500/20 bg-[#1a1d2e]/80 flex flex-col overflow-hidden h-full">
+      <div className="px-3 py-2 border-b border-slate-700/50 flex items-center justify-between shrink-0">
+        <h2 className="text-sm font-semibold text-slate-200">事件流</h2>
         <div>
           {status === "running" && (
             <span className="flex items-center gap-1 text-[12px] text-emerald-400">
@@ -69,8 +69,7 @@ export default function EventTimeline() {
         </div>
       </div>
 
-      {/* Fixed-height scrolling window: show 8 events max */}
-      <div ref={scrollRef} className="h-80 overflow-y-auto px-3 py-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+      <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto px-3 py-1 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
         {events.length === 0 && status === "idle" && (
           <div className="flex items-center justify-center h-full">
             <p className="text-[12px] text-slate-600 text-center leading-relaxed">
