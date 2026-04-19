@@ -135,9 +135,27 @@ export default function ScenarioPanel() {
   return (
     <div className="rounded-xl border border-indigo-500/20 bg-[#1a1d2e]/80 p-3">
       <div className="flex items-center justify-between mb-3">
-        <h2 className="text-base font-bold text-slate-200">触发市场信号</h2>
-        <span className="text-[11px] text-slate-500 bg-slate-800/60 px-2.5 py-0.5 rounded-full">生产模式</span>
+        <h2 className="text-sm font-bold text-slate-200">触发市场信号</h2>
+        <span className="text-[10px] text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded-full">生产模式</span>
       </div>
+
+      {/* CTA trigger button — always visible at top */}
+      <button
+        onClick={handleTrigger}
+        disabled={isRunning}
+        className={`w-full rounded-lg px-4 py-2.5 text-sm font-bold transition-all mb-3
+          ${isRunning
+            ? "bg-slate-700 text-slate-500 cursor-not-allowed"
+            : "bg-indigo-600 hover:bg-indigo-500 text-white active:scale-95 shadow-lg shadow-indigo-900/40 animate-pulse-slow"
+          }`}
+      >
+        {isRunning ? (
+          <span className="flex items-center justify-center gap-2">
+            <span className="h-3 w-3 rounded-full border-2 border-slate-400 border-t-transparent animate-spin" />
+            协同进行中…
+          </span>
+        ) : "▶ 触发协同"}
+      </button>
 
       {/* Quick-fill template chips */}
       <div className="mb-3">
@@ -265,7 +283,7 @@ export default function ScenarioPanel() {
         <button
           onClick={handleTrigger}
           disabled={isRunning}
-          className={`w-full rounded-lg px-4 py-3 text-base font-bold transition-all mt-1
+          className={`w-full rounded-lg px-4 py-2.5 text-sm font-bold transition-all mt-1
             ${isRunning
               ? "bg-slate-700 text-slate-500 cursor-not-allowed"
               : "bg-indigo-600 hover:bg-indigo-500 text-white active:scale-95 shadow-lg shadow-indigo-900/40"
@@ -276,7 +294,7 @@ export default function ScenarioPanel() {
               <span className="h-3 w-3 rounded-full border-2 border-slate-400 border-t-transparent animate-spin" />
               协同进行中…
             </span>
-          ) : "▶ 触发协同"}
+          ) : "▶ 再次触发"}
         </button>
       </div>
 

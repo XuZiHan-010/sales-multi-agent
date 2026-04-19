@@ -117,11 +117,10 @@ export default function Home() {
       >
         {/* Left: Agent + Inventory + EventTimeline */}
         <aside className="lg:col-span-3 flex flex-col gap-2 min-h-0 overflow-hidden">
-          {/* AgentStatusPanel: capped so EventTimeline always gets space */}
-          <div className="shrink-0 overflow-hidden" style={{ maxHeight: 260 }}>
+          <div className="shrink-0 overflow-hidden" style={{ maxHeight: 200 }}>
             <AgentStatusPanel />
           </div>
-          <div className="shrink-0">
+          <div className="shrink-0" style={{ maxHeight: 160 }}>
             <InventoryWidget refreshKey={invRefreshKey} />
           </div>
           <div className="flex-1 min-h-0 overflow-hidden">
