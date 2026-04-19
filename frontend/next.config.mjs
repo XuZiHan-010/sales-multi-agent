@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Allow SSE streaming responses
+  output: "export",
+  trailingSlash: true,
   async headers() {
     return [
       {
@@ -9,7 +10,6 @@ const nextConfig = {
       },
     ]
   },
-  // Point API calls to backend — override via NEXT_PUBLIC_API_BASE env var
   env: {
     NEXT_PUBLIC_API_BASE: process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8000/api",
   },
