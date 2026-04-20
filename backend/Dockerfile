@@ -5,8 +5,7 @@ WORKDIR /frontend
 COPY frontend/package*.json ./
 RUN npm ci
 COPY frontend/ ./
-ARG NEXT_PUBLIC_API_BASE=/api
-ENV NEXT_PUBLIC_API_BASE=$NEXT_PUBLIC_API_BASE
+ENV NEXT_PUBLIC_API_BASE=/api
 RUN npm run build
 
 # Stage 2: Python backend + serve frontend static files
@@ -23,8 +22,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ .
 
-# Copy frontend static output
-COPY --from=frontend-builder /frontend/out ./static_frontend
+# Copy frontend static output (Next.js exports to 'out' directory)
+COPY --from=frontend-builder /frontend/out/ ./static_frontend/
 
 # Pre-generate mock data
 RUN python -c "from data.generate_mock_data import generate_all; generate_all()"
