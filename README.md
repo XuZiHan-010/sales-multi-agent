@@ -9,7 +9,7 @@
 
 ### Overview
 
-A **production-sales coordination system** powered by multi-agent architecture and Contract Net Protocol. Designed to detect market demand shocks (livestream events, competitor promotions, weather anomalies, supply disruptions) and automatically orchestrate 7 intelligent agents (1 Coordinator, 3 Sales, 10 Inventory, 3 Production) to negotiate and allocate inventory within **<2 hours**, targeting **>90% demand fulfillment** while minimizing procurement cost and stockout losses.
+A **production-sales coordination system** powered by multi-agent architecture and Contract Net Protocol. Designed to detect market demand shocks (livestream events, competitor promotions, weather anomalies, supply disruptions) and automatically orchestrate 18 intelligent agents (1 Coordinator, 3 Sales, 10 Inventory, 3 Production, 1 Risk Observer) to negotiate and allocate inventory within **<2 hours**, targeting **>90% demand fulfillment** while minimizing procurement cost and stockout losses.
 
 **Challenge Title**: 多智能体助力产销协同，提高供应链响应效率
 *(Multi-Agent Systems for Production-Sales Coordination, Enhancing Supply Chain Response Efficiency)*
@@ -18,7 +18,8 @@ A **production-sales coordination system** powered by multi-agent architecture a
 
 - **Real-Time Event Streaming** — SSE-based live agent negotiation visualization
 - **Contract Net Protocol** — FIPA-ACL compliant multi-agent negotiation framework
-- **Federated Forecasting** — Distributed time-series demand prediction with Laplace privacy
+- **Federated Forecasting** — Distributed time-series demand prediction with Laplace privacy (隐私保护)
+- **Risk Assessment** — Multi-dimensional risk detection (shortage, overload, lead-time)
 - **Responsive UI** — Desktop, tablet, and mobile layouts with live negotiation graph
 - **Live Inventory Tracking** — Cross-run inventory state persistence (WMS simulation)
 - **Scenario Simulation** — Pre-built scenarios (livestream, competitor, weather, supply shock)
@@ -103,6 +104,7 @@ delotiee_agent/
 │   │   ├── inventory_agent.py        # Warehouse stock proposals
 │   │   ├── production_agent.py       # Factory capacity proposals
 │   │   ├── sales_agent.py            # Regional demand forecasting
+│   │   ├── risk_agent.py             # Risk assessment (shortage/overload/lead-time)
 │   │   └── market_signal_agent.py    # Signal injection
 │   ├── graph/
 │   │   ├── negotiation_graph.py      # LangGraph state machine (6 nodes)
@@ -140,7 +142,6 @@ delotiee_agent/
 │   │       └── agentEventMap.ts      # Event → node/edge animation mapping
 │   ├── package.json
 │   └── tsconfig.json
-├── CLAUDE.md                          # Development guide & architecture notes
 ├── .env.example                       # Environment template
 └── README.md                          # This file
 ```
@@ -300,20 +301,6 @@ npm run dev  # 访问 localhost:3000
 5. **前端部署** — Next.js 服务自动配置
 
 ---
-
-## Development | 开发
-
-详见 [CLAUDE.md](CLAUDE.md) 获取架构指南、常见任务和调试技巧。
-
----
-
-## 贡献
-
-Team D, Deloitte 2026 Digital Camp Elite Challenge
-
-**Mentor:** Paulo Chen
-
-**Team Members:** [Your Names]
 
 ---
 
