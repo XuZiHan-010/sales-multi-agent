@@ -12,6 +12,7 @@ export type EventType =
   | "propose_received"
   | "accept_sent"
   | "no_shortage"
+  | "risk_assessed"
   | "finalized"
   | "stream_end"
 

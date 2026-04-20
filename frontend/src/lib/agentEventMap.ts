@@ -28,6 +28,8 @@ export function agentsForEvent(ev: ScenarioEvent): string[] {
       if (ev.receiver?.includes("inventory")) return ["inv", "coordinator"]
       if (ev.receiver?.includes("production")) return ["prod", "coordinator"]
       return ["coordinator"]
+    case "risk_assessed":
+      return ["coordinator"]
     case "no_shortage":
     case "finalized":
       return ["coordinator"]
@@ -80,6 +82,7 @@ export function bubbleLabel(ev: ScenarioEvent): string {
     case "propose_received":   return ev.qty ? `💬 报 ${ev.qty.toLocaleString()}箱` : "💬 收到投标"
     case "accept_sent":        return ev.qty ? `✅ 中标 ${ev.qty.toLocaleString()}箱` : "✅ 中标"
     case "no_shortage":        return "✅ 无需协同"
+    case "risk_assessed":      return "⚡ 风险评估完成"
     case "finalized":          return "🏁 协同完成"
     default:                    return ev.type
   }

@@ -13,6 +13,7 @@ const EVENT_CFG: Record<string, { icon: string; color: string; label: string }> 
   propose_received:   { icon: "💬", color: "text-emerald-400", label: "收到投标" },
   accept_sent:        { icon: "✅", color: "text-green-400",   label: "中标确认" },
   no_shortage:        { icon: "✅", color: "text-green-400",   label: "无需协同" },
+  risk_assessed:      { icon: "⚡", color: "text-orange-400",  label: "风险评估" },
   finalized:          { icon: "🏁", color: "text-indigo-300",  label: "协同完成" },
 }
 

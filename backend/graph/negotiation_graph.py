@@ -301,6 +301,35 @@ def node_broadcast_cfp(state: GraphState) -> GraphState:
     return {**state, "event_log": events, "negotiation_results": results}
 
 
+def node_risk_assessment(state: GraphState) -> GraphState:
+    """Risk Agent observer: assess shortage / overload / lead-time risks."""
+    from agents.risk_agent import assess_risks
+    results = state.get("negotiation_results", [])
+    events = list(state.get("event_log", []))
+
+    risks = assess_risks(results)
+
+    if risks:
+        high = [r for r in risks if r["level"] == "high"]
+        level_label = "高风险" if high else "中风险"
+        summary = "；".join(r["message"] for r in risks)
+        events.append(_log_event(state, "risk_assessed", {
+            "message": f"[风险评估] {level_label}：{summary}",
+            "risks": risks,
+            "risk_count": len(risks),
+            "has_high_risk": len(high) > 0,
+        }))
+    else:
+        events.append(_log_event(state, "risk_assessed", {
+            "message": "[风险评估] 当前协同结果无显著风险",
+            "risks": [],
+            "risk_count": 0,
+            "has_high_risk": False,
+        }))
+
+    return {**state, "event_log": events}
+
+
 def node_finalize(state: GraphState) -> GraphState:
     """Aggregate and log final outcome."""
     results = state.get("negotiation_results", [])
@@ -342,6 +371,7 @@ def build_negotiation_graph():
     g.add_node("sense_demand", node_sense_demand)
     g.add_node("apply_faults", node_apply_faults)
     g.add_node("broadcast_cfp", node_broadcast_cfp)
+    g.add_node("risk_assessment", node_risk_assessment)
     g.add_node("finalize", node_finalize)
 
     g.set_entry_point("sense_signal")
@@ -349,7 +379,8 @@ def build_negotiation_graph():
     g.add_edge("federated_forecast", "sense_demand")
     g.add_edge("sense_demand", "apply_faults")
     g.add_edge("apply_faults", "broadcast_cfp")
-    g.add_edge("broadcast_cfp", "finalize")
+    g.add_edge("broadcast_cfp", "risk_assessment")
+    g.add_edge("risk_assessment", "finalize")
     g.add_edge("finalize", END)
 
     return g.compile()
