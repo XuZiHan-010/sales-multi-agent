@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState, useCallback } from "react"
 
-const API = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8000/api"
+const API = process.env.NEXT_PUBLIC_API_BASE ?? "/api"
 
 interface InventoryRow {
   warehouse: string

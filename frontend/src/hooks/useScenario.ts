@@ -2,7 +2,7 @@
 import { useCallback, useRef } from "react"
 import { useScenarioStore, type ScenarioEvent } from "@/store/scenarioStore"
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8000/api"
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "/api"
 
 export function useScenario() {
   // Use individual selectors so useCallback deps are stable function references
