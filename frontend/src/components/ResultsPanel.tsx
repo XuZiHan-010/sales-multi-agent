@@ -26,8 +26,10 @@ function RiskBanner({ riskEntries }: { riskEntries: { sku: string; regions: stri
     <div className="rounded-xl border border-amber-500/40 bg-amber-900/20 p-4">
       <div className="flex items-center gap-2 mb-2.5">
         <span className="text-base">⚠️</span>
-        <h3 className="text-sm font-bold text-amber-300">缺货风险预警</h3>
+        <h3 className="text-sm font-bold text-amber-300">预测风险预警</h3>
+        <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25">协同前</span>
       </div>
+      <p className="text-[11px] text-slate-500 mb-2">联邦预测识别的协同前缺货风险，已触发多智能体协同</p>
       <div className="flex flex-col gap-2">
         {riskEntries.map(({ sku, regions }) => (
           <div key={sku} className="flex items-center gap-2 flex-wrap">
@@ -61,6 +63,7 @@ function RiskAssessmentPanel({ risks }: { risks: RiskItem[] }) {
       <div className="flex items-center gap-2 mb-2.5">
         <span className="text-base">🛡️</span>
         <h3 className="text-sm font-bold text-amber-300">Risk Agent 评估</h3>
+        <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-700/50 text-slate-400 border border-slate-600/30">协同后</span>
         <span className={`ml-auto text-[10px] px-2 py-0.5 rounded-full font-semibold border ${
           risks.length === 0
             ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
@@ -73,7 +76,7 @@ function RiskAssessmentPanel({ risks }: { risks: RiskItem[] }) {
       </div>
 
       {risks.length === 0 ? (
-        <p className="text-[12px] text-slate-400">当前协同方案无缺货、超载或交期风险。</p>
+        <p className="text-[12px] text-slate-400">协同完成后评估：当前分配方案无缺货、产能超载或交期延误风险。</p>
       ) : (
         <div className="flex flex-col gap-1.5">
           {risks.map((risk, i) => (
