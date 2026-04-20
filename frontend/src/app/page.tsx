@@ -120,7 +120,7 @@ export default function Home() {
           <div className="shrink-0 overflow-hidden" style={{ maxHeight: 200 }}>
             <AgentStatusPanel />
           </div>
-          <div className="shrink-0" style={{ maxHeight: 160 }}>
+          <div className="shrink-0">
             <InventoryWidget refreshKey={invRefreshKey} />
           </div>
           <div className="flex-1 min-h-0 overflow-hidden">
