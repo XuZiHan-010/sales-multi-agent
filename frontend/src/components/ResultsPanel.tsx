@@ -1,5 +1,5 @@
 "use client"
-import { useScenarioStore } from "@/store/scenarioStore"
+import { useScenarioStore, type RiskItem } from "@/store/scenarioStore"
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend
 } from "recharts"
@@ -40,6 +40,62 @@ function RiskBanner({ riskEntries }: { riskEntries: { sku: string; regions: stri
           </div>
         ))}
       </div>
+    </div>
+  )
+}
+
+// ── Risk Agent assessment panel ───────────────────────────────────────────────
+const RISK_ICONS: Record<string, string> = { shortage: "📦", overload: "⚡", lead_time: "⏱️" }
+const RISK_NAMES: Record<string, string> = { shortage: "缺货风险", overload: "产能超载", lead_time: "交期延误" }
+
+function RiskAssessmentPanel({ risks }: { risks: RiskItem[] }) {
+  const hasHigh = risks.some(r => r.level === "high")
+  return (
+    <div className={`rounded-xl border p-4 ${
+      risks.length === 0
+        ? "border-emerald-500/25 bg-emerald-900/10"
+        : hasHigh
+          ? "border-red-500/35 bg-red-900/10"
+          : "border-amber-500/30 bg-amber-900/10"
+    }`}>
+      <div className="flex items-center gap-2 mb-2.5">
+        <span className="text-base">🛡️</span>
+        <h3 className="text-sm font-bold text-amber-300">Risk Agent 评估</h3>
+        <span className={`ml-auto text-[10px] px-2 py-0.5 rounded-full font-semibold border ${
+          risks.length === 0
+            ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+            : hasHigh
+              ? "bg-red-500/20 text-red-300 border-red-500/30"
+              : "bg-amber-500/20 text-amber-300 border-amber-500/30"
+        }`}>
+          {risks.length === 0 ? "✓ 无风险" : hasHigh ? "⚠ 高风险" : "△ 中风险"}
+        </span>
+      </div>
+
+      {risks.length === 0 ? (
+        <p className="text-[12px] text-slate-400">当前协同方案无缺货、超载或交期风险。</p>
+      ) : (
+        <div className="flex flex-col gap-1.5">
+          {risks.map((risk, i) => (
+            <div key={i} className={`flex items-start gap-2.5 rounded-lg px-3 py-2 ${
+              risk.level === "high"
+                ? "bg-red-900/25 border border-red-500/20"
+                : "bg-amber-900/20 border border-amber-500/20"
+            }`}>
+              <span className="text-sm shrink-0 mt-0.5">{RISK_ICONS[risk.type] ?? "⚠️"}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-[11px] font-semibold text-slate-300">{RISK_NAMES[risk.type] ?? risk.type}</span>
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                    risk.level === "high" ? "bg-red-500/30 text-red-300" : "bg-amber-500/30 text-amber-300"
+                  }`}>{risk.level === "high" ? "高" : "中"}</span>
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">{risk.message}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -154,7 +210,7 @@ function FillRateDonut({ awarded, unmet }: { awarded: number; unmet: number }) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 export default function ResultsPanel() {
-  const { negotiationResults, status, federatedForecasts } = useScenarioStore()
+  const { negotiationResults, status, federatedForecasts, riskAssessment } = useScenarioStore()
 
   const totalAwarded  = negotiationResults.reduce((s, r) => s + (r.awarded_qty ?? 0), 0)
   const totalRequired = negotiationResults.reduce((s, r) => s + (r.required_qty ?? 0), 0)
@@ -188,6 +244,9 @@ export default function ResultsPanel() {
 
       {/* 2 — 风险预警（最显眼位置） */}
       {isDone && <RiskBanner riskEntries={riskEntries} />}
+
+      {/* 2b — Risk Agent 评估结果 */}
+      {isDone && riskAssessment !== null && <RiskAssessmentPanel risks={riskAssessment} />}
 
       {/* 3 — Coordinator 决策摘要（AI 核心价值） */}
       {isDone && (

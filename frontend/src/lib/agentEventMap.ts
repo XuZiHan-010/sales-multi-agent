@@ -29,7 +29,7 @@ export function agentsForEvent(ev: ScenarioEvent): string[] {
       if (ev.receiver?.includes("production")) return ["prod", "coordinator"]
       return ["coordinator"]
     case "risk_assessed":
-      return ["coordinator"]
+      return ["risk", "coordinator"]
     case "no_shortage":
     case "finalized":
       return ["coordinator"]
@@ -63,6 +63,8 @@ export function edgeForEvent(ev: ScenarioEvent): { edgeId: string; reverse: bool
       const edgeId = isInv ? "co-inv" : "co-prd"
       return { edgeId, reverse: false, label: "✅ 中标", color: "#4ade80" }
     }
+    case "risk_assessed":
+      return { edgeId: "co-risk", reverse: false, label: ev.has_high_risk ? "🚨 高风险" : "🛡️ 已评估", color: "#fbbf24" }
     default:
       return null
   }
@@ -82,7 +84,7 @@ export function bubbleLabel(ev: ScenarioEvent): string {
     case "propose_received":   return ev.qty ? `💬 报 ${ev.qty.toLocaleString()}箱` : "💬 收到投标"
     case "accept_sent":        return ev.qty ? `✅ 中标 ${ev.qty.toLocaleString()}箱` : "✅ 中标"
     case "no_shortage":        return "✅ 无需协同"
-    case "risk_assessed":      return "⚡ 风险评估完成"
+    case "risk_assessed":      return ev.has_high_risk ? "🚨 高风险警报" : "🛡️ 风险可控"
     case "finalized":          return "🏁 协同完成"
     default:                    return ev.type
   }

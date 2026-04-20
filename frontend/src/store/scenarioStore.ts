@@ -16,6 +16,14 @@ export type EventType =
   | "finalized"
   | "stream_end"
 
+export interface RiskItem {
+  type: "shortage" | "overload" | "lead_time"
+  level: "high" | "medium" | "low"
+  sku: string | null
+  region: string | null
+  message: string
+}
+
 export interface ScenarioEvent {
   id: string
   timestamp: string
@@ -37,6 +45,9 @@ export interface ScenarioEvent {
   total_cost?: number
   stockout_loss_avoided?: number
   status?: string
+  risks?: RiskItem[]
+  risk_count?: number
+  has_high_risk?: boolean
 }
 
 export interface BidTrace {
@@ -78,6 +89,7 @@ export interface ScenarioStore {
   negotiationResults: NegotiationResult[]
   federatedForecasts: Record<string, ForecastView>
   finalSummary: ScenarioEvent | null
+  riskAssessment: RiskItem[] | null
 
   setSelectedScenario: (id: string) => void
   startRun: (runId: string) => void
@@ -96,6 +108,7 @@ export const useScenarioStore = create<ScenarioStore>((set) => ({
   negotiationResults: [],
   federatedForecasts: {},
   finalSummary: null,
+  riskAssessment: null,
 
   setSelectedScenario: (id) => set({ selectedScenario: id }),
 
@@ -105,6 +118,7 @@ export const useScenarioStore = create<ScenarioStore>((set) => ({
     set((s) => ({
       events: [...s.events, ev],
       finalSummary: ev.type === "finalized" ? ev : s.finalSummary,
+      riskAssessment: ev.type === "risk_assessed" ? (ev.risks ?? []) : s.riskAssessment,
     })),
 
   setResults: (results) => set({ negotiationResults: results }),
@@ -113,5 +127,5 @@ export const useScenarioStore = create<ScenarioStore>((set) => ({
 
   setStatus: (status) => set({ status }),
 
-  reset: () => set({ runId: null, status: "idle", events: [], negotiationResults: [], federatedForecasts: {}, finalSummary: null }),
+  reset: () => set({ runId: null, status: "idle", events: [], negotiationResults: [], federatedForecasts: {}, finalSummary: null, riskAssessment: null }),
 }))

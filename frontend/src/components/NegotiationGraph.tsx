@@ -19,6 +19,7 @@ const LIVE_CFG: Record<string, { icon: string; tint: string; accent: string; lab
   propose_received:   { icon: "💬", tint: "rgba(16,185,129,0.2)", accent: "#6ee7b7", label: "收到投标" },
   accept_sent:        { icon: "✅", tint: "rgba(21,128,61,0.22)", accent: "#86efac", label: "中标确认" },
   no_shortage:        { icon: "✅", tint: "rgba(21,128,61,0.22)", accent: "#86efac", label: "无需协同" },
+  risk_assessed:      { icon: "🛡️", tint: "rgba(217,119,6,0.18)",  accent: "#fbbf24", label: "风险评估" },
   finalized:          { icon: "🏁", tint: "rgba(79,70,229,0.22)", accent: "#c7d2fe", label: "协同完成" },
 }
 
@@ -31,6 +32,7 @@ const NODES = [
   { id: "sales_south",   label: "Sales 华南",    role: "需求预测",  color: "#0e7490", glow: "rgba(14,116,144,0.55)", x: 85, y: 47 },
   { id: "inv",           label: "Inventory ×10", role: "库存调拨",  color: "#b45309", glow: "rgba(180,83,9,0.55)",   x: 28, y: 70 },
   { id: "prod",          label: "Production ×3", role: "排产投标",  color: "#9f1239", glow: "rgba(159,18,57,0.55)",  x: 72, y: 70 },
+  { id: "risk",          label: "Risk Agent",    role: "风险监控",  color: "#d97706", glow: "rgba(217,119,6,0.6)",   x: 84, y: 8  },
 ]
 
 const EDGES = [
@@ -41,6 +43,7 @@ const EDGES = [
   { id: "co-inv",  from: "coordinator",   to: "inv"         },
   { id: "co-prd",  from: "coordinator",   to: "prod"        },
   { id: "inv-prd", from: "inv",           to: "prod"        },
+  { id: "co-risk", from: "coordinator",   to: "risk"        },
 ]
 
 // ── Bubble & Flow types ──────────────────────────────────────────────────────

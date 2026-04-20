@@ -5,12 +5,13 @@ import { agentsForEvent } from "@/lib/agentEventMap"
 
 const AGENTS = [
   { id: "market_signal",  label: "Market Signal",  color: "bg-purple-500" },
+  { id: "coordinator",    label: "Coordinator",    color: "bg-indigo-500" },
   { id: "sales_north",    label: "Sales 华北",     color: "bg-cyan-500" },
   { id: "sales_east",     label: "Sales 华东",     color: "bg-cyan-500" },
   { id: "sales_south",    label: "Sales 华南",     color: "bg-cyan-500" },
   { id: "inv",            label: "Inventory ×10",  color: "bg-amber-500" },
   { id: "prod",           label: "Production ×3",  color: "bg-rose-500" },
-  { id: "coordinator",    label: "Coordinator",    color: "bg-indigo-500" },
+  { id: "risk",           label: "Risk Observer",  color: "bg-yellow-500" },
 ]
 
 export default function AgentStatusPanel() {
@@ -26,7 +27,7 @@ export default function AgentStatusPanel() {
     <div className="rounded-xl border border-indigo-500/20 bg-[#1a1d2e]/80 p-3 shrink-0">
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-sm font-semibold text-slate-300">Agent 协同网络</h2>
-        <span className="text-[11px] text-slate-600">7 节点</span>
+        <span className="text-[11px] text-slate-600">8 节点</span>
       </div>
       <div className="flex flex-col gap-0.5 overflow-y-auto" style={{ maxHeight: 160 }}>
         {AGENTS.map((agent) => {
